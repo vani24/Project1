@@ -29,24 +29,24 @@ public class AutoScripts {
 		driver=Module.Login_toXero(driver);
 		String applicationTitle=driver.getTitle();
 		if(applicationTitle.contains("Xero"))
-			DriverFileTest.logger.log(Status.INFO,"Xero page is verified");
+			DriverFile.logger.log(Status.INFO,"Xero page is verified");
 		else{
-			DriverFileTest.logger.log(Status.FAIL,MarkupHelper.createLabel("Xero page is not verified",ExtentColor.RED));
-			DriverFileTest.status=false;
+			DriverFile.logger.log(Status.FAIL,MarkupHelper.createLabel("Xero page is not verified",ExtentColor.RED));
+			DriverFile.status=false;
 			
 		}
 		String homeTiltle=driver.getTitle();
 		System.out.println(homeTiltle);
 		Thread.sleep(6000);
 		if(homeTiltle.contains("Xero | Dashboard | tekarch"))
-			DriverFileTest.logger.log(Status.INFO,"home page verified");
+			DriverFile.logger.log(Status.INFO,"home page verified");
 		else{
-			DriverFileTest.logger.log(Status.FAIL,MarkupHelper.createLabel("home page is not verified",ExtentColor.RED));
+			DriverFile.logger.log(Status.FAIL,MarkupHelper.createLabel("home page is not verified",ExtentColor.RED));
 			String destination=Module.CaptureScreen(driver,Thread.currentThread().getStackTrace()[1].getMethodName());
-			DriverFileTest.logger.log(Status.FAIL,"screen shots at:"+DriverFileTest.logger.addScreenCaptureFromPath(destination));
+			DriverFile.logger.log(Status.FAIL,"screen shots at:"+DriverFile.logger.addScreenCaptureFromPath(destination));
 		}
 			Module.closeBrowser(driver);
-		DriverFileTest.logger.log(Status.PASS,MarkupHelper.createLabel("passed",ExtentColor.GREEN));
+		DriverFile.logger.log(Status.PASS,MarkupHelper.createLabel("passed",ExtentColor.GREEN));
 		
 	}
 	@Test(enabled=true)
@@ -56,10 +56,10 @@ public class AutoScripts {
 		driver.get("https://login.xero.com/");
 		String applicationTitle=driver.getTitle();
 		if(applicationTitle.contains("Xero"))
-			DriverFileTest.logger.log(Status.INFO,"Xero page is verified");
+			DriverFile.logger.log(Status.INFO,"Xero page is verified");
 		else{
-			DriverFileTest.logger.log(Status.FAIL,MarkupHelper.createLabel("Xero page is not verified",ExtentColor.RED));
-			DriverFileTest.status=false;
+			DriverFile.logger.log(Status.FAIL,MarkupHelper.createLabel("Xero page is not verified",ExtentColor.RED));
+			DriverFile.status=false;
 			
 		}
 		//
@@ -69,14 +69,14 @@ public class AutoScripts {
 		String actualText=driver.findElement(By.xpath(".//*[@id='contentTop']/div[2]/div[1]/div[2]/p")).getText();
 		
 		if(actualText.equalsIgnoreCase(expString)){
-			DriverFileTest.logger.log(Status.INFO,"error message verified");
+			DriverFile.logger.log(Status.INFO,"error message verified");
 		}
 		else{
-			DriverFileTest.logger.log(Status.FAIL,MarkupHelper.createLabel("error message is not verified",ExtentColor.RED));
+			DriverFile.logger.log(Status.FAIL,MarkupHelper.createLabel("error message is not verified",ExtentColor.RED));
 			
 		}
 		Module.closeBrowser(driver);
-		DriverFileTest.logger.log(Status.PASS,MarkupHelper.createLabel("passed",ExtentColor.GREEN));
+		DriverFile.logger.log(Status.PASS,MarkupHelper.createLabel("passed",ExtentColor.GREEN));
 		
 		
 		
@@ -88,10 +88,10 @@ public class AutoScripts {
 		driver.get("https://login.xero.com/");
 		String applicationTitle=driver.getTitle();
 		if(applicationTitle.contains("Xero"))
-			DriverFileTest.logger.log(Status.INFO,"Xero page is verified");
+			DriverFile.logger.log(Status.INFO,"Xero page is verified");
 		else{
-			DriverFileTest.logger.log(Status.FAIL,MarkupHelper.createLabel("Xero page is not verified",ExtentColor.RED));
-			DriverFileTest.status=false;
+			DriverFile.logger.log(Status.FAIL,MarkupHelper.createLabel("Xero page is not verified",ExtentColor.RED));
+			DriverFile.status=false;
 			
 		}
 		//
@@ -102,14 +102,14 @@ public class AutoScripts {
 		System.out.println(actualText);
 		System.out.println(expString);
 		if(actualText.equalsIgnoreCase(expString)){
-			DriverFileTest.logger.log(Status.INFO,"error message verified");
+			DriverFile.logger.log(Status.INFO,"error message verified");
 		}
 		else{
-			DriverFileTest.logger.log(Status.FAIL,MarkupHelper.createLabel("error message is not verified",ExtentColor.RED));
+			DriverFile.logger.log(Status.FAIL,MarkupHelper.createLabel("error message is not verified",ExtentColor.RED));
 			
 		}
 		Module.closeBrowser(driver);
-		DriverFileTest.logger.log(Status.PASS,MarkupHelper.createLabel("passed",ExtentColor.GREEN));
+		DriverFile.logger.log(Status.PASS,MarkupHelper.createLabel("passed",ExtentColor.GREEN));
 		
 		
 		
@@ -122,10 +122,10 @@ public class AutoScripts {
 		driver.get("https://login.xero.com/");
 		String applicationTitle=driver.getTitle();
 		if(applicationTitle.contains("Xero"))
-			DriverFileTest.logger.log(Status.INFO,"Xero page is verified");
+			DriverFile.logger.log(Status.INFO,"Xero page is verified");
 		else{
-			DriverFileTest.logger.log(Status.FAIL,MarkupHelper.createLabel("Xero page is not verified",ExtentColor.RED));
-			DriverFileTest.status=false;
+			DriverFile.logger.log(Status.FAIL,MarkupHelper.createLabel("Xero page is not verified",ExtentColor.RED));
+			DriverFile.status=false;
 			
 		}
 		//
@@ -140,14 +140,14 @@ public class AutoScripts {
 		System.out.println(expString);
 		System.out.println(actualText);
 		if(actualText.contains(expString)){
-			DriverFileTest.logger.log(Status.INFO,"error message verified");
+			DriverFile.logger.log(Status.INFO,"error message verified");
 		}
 		else{
-			DriverFileTest.logger.log(Status.FAIL,MarkupHelper.createLabel("error message is not verified",ExtentColor.RED));
+			DriverFile.logger.log(Status.FAIL,MarkupHelper.createLabel("error message is not verified",ExtentColor.RED));
 			
 		}
 		Module.closeBrowser(driver);
-		DriverFileTest.logger.log(Status.PASS,MarkupHelper.createLabel("passed",ExtentColor.GREEN));
+		DriverFile.logger.log(Status.PASS,MarkupHelper.createLabel("passed",ExtentColor.GREEN));
 		
 		
 		
@@ -162,10 +162,10 @@ public static void SignUpTest_01(String browserName) throws InterruptedException
 		String applicationTitle=driver.getTitle();
 		System.out.println(applicationTitle);
 		if(applicationTitle.contains("Xero US"))
-			DriverFileTest.logger.log(Status.INFO,"Xero page is verified");
+			DriverFile.logger.log(Status.INFO,"Xero page is verified");
 		else{
-			DriverFileTest.logger.log(Status.FAIL,MarkupHelper.createLabel("Xero page is not verified",ExtentColor.RED));
-			DriverFileTest.status=false;
+			DriverFile.logger.log(Status.FAIL,MarkupHelper.createLabel("Xero page is not verified",ExtentColor.RED));
+			DriverFile.status=false;
 			
 		}
 		//
@@ -175,10 +175,10 @@ public static void SignUpTest_01(String browserName) throws InterruptedException
 		String pageTitle=driver.findElement(By.xpath("html/body/div[6]/main/div[1]/div/div/form/div[1]/h2")).getText();
 		
 		if(expPageTitle.contains(pageTitle))
-			DriverFileTest.logger.log(Status.INFO,"Xero page is verified");
+			DriverFile.logger.log(Status.INFO,"Xero page is verified");
 		else{
-			DriverFileTest.logger.log(Status.FAIL,MarkupHelper.createLabel("Xero page is not verified",ExtentColor.RED));
-			DriverFileTest.status=false;
+			DriverFile.logger.log(Status.FAIL,MarkupHelper.createLabel("Xero page is not verified",ExtentColor.RED));
+			DriverFile.status=false;
 			
 		}
 		//String expString="A link to reset your password has been sent to:"+driver.findElement(By.id("UserName")).getText();
@@ -202,11 +202,11 @@ public static void SignUpTest_01(String browserName) throws InterruptedException
 				
 		Thread.sleep(4000);
 	
-		DriverFileTest.logger.log(Status.FAIL,MarkupHelper.createLabel("Aptacha Cannot be automated",ExtentColor.RED));
+		DriverFile.logger.log(Status.FAIL,MarkupHelper.createLabel("Aptacha Cannot be automated",ExtentColor.RED));
 			
 		
 		Module.closeBrowser(driver);
-		DriverFileTest.logger.log(Status.PASS,MarkupHelper.createLabel("passed",ExtentColor.GREEN));
+		DriverFile.logger.log(Status.PASS,MarkupHelper.createLabel("passed",ExtentColor.GREEN));
 		
 		
 		
@@ -220,10 +220,10 @@ public static void SignUpErrorTest_02(String browserName) throws InterruptedExce
 		String applicationTitle=driver.getTitle();
 		System.out.println(applicationTitle);
 		if(applicationTitle.contains("Xero US"))
-			DriverFileTest.logger.log(Status.INFO,"Xero page is verified");
+			DriverFile.logger.log(Status.INFO,"Xero page is verified");
 		else{
-			DriverFileTest.logger.log(Status.FAIL,MarkupHelper.createLabel("Xero page is not verified",ExtentColor.RED));
-			DriverFileTest.status=false;
+			DriverFile.logger.log(Status.FAIL,MarkupHelper.createLabel("Xero page is not verified",ExtentColor.RED));
+			DriverFile.status=false;
 			
 		}
 		//
@@ -233,10 +233,10 @@ public static void SignUpErrorTest_02(String browserName) throws InterruptedExce
 		String pageTitle=driver.findElement(By.xpath("html/body/div[6]/main/div[1]/div/div/form/div[1]/h2")).getText();
 		
 		if(expPageTitle.contains(pageTitle))
-			DriverFileTest.logger.log(Status.INFO,"Xero page is verified");
+			DriverFile.logger.log(Status.INFO,"Xero page is verified");
 		else{
-			DriverFileTest.logger.log(Status.FAIL,MarkupHelper.createLabel("Xero page is not verified",ExtentColor.RED));
-			DriverFileTest.status=false;
+			DriverFile.logger.log(Status.FAIL,MarkupHelper.createLabel("Xero page is not verified",ExtentColor.RED));
+			DriverFile.status=false;
 			
 		}
 		//String expString="A link to reset your password has been sent to:"+driver.findElement(By.id("UserName")).getText();
@@ -274,31 +274,31 @@ public static void SignUpErrorTest_02(String browserName) throws InterruptedExce
 		
 		Thread.sleep(4000);
 		if(firstNameerr.contains(expFirstNameerr)){
-			DriverFileTest.logger.log(Status.INFO,"error message verified");
+			DriverFile.logger.log(Status.INFO,"error message verified");
 		}
 		else{
-			DriverFileTest.logger.log(Status.FAIL,MarkupHelper.createLabel("error message is not verified",ExtentColor.RED));
+			DriverFile.logger.log(Status.FAIL,MarkupHelper.createLabel("error message is not verified",ExtentColor.RED));
 			
 		}
 		if(lastNameerr.contains(expLastNameerr)){
-			DriverFileTest.logger.log(Status.INFO,"error message verified");
+			DriverFile.logger.log(Status.INFO,"error message verified");
 		}
 		else{
-			DriverFileTest.logger.log(Status.FAIL,MarkupHelper.createLabel("error message is not verified",ExtentColor.RED));
+			DriverFile.logger.log(Status.FAIL,MarkupHelper.createLabel("error message is not verified",ExtentColor.RED));
 			
 		}
 		if(emailIDerr.contains(expEmailIDerr)){
-			DriverFileTest.logger.log(Status.INFO,"error message verified");
+			DriverFile.logger.log(Status.INFO,"error message verified");
 		}
 		else{
-			DriverFileTest.logger.log(Status.FAIL,MarkupHelper.createLabel("error message is not verified",ExtentColor.RED));
+			DriverFile.logger.log(Status.FAIL,MarkupHelper.createLabel("error message is not verified",ExtentColor.RED));
 			
 		}
 		if(phoneNumerr.contains(expPhoneNumerr)){
-			DriverFileTest.logger.log(Status.INFO,"error message verified");
+			DriverFile.logger.log(Status.INFO,"error message verified");
 		}
 		else{
-			DriverFileTest.logger.log(Status.FAIL,MarkupHelper.createLabel("error message is not verified",ExtentColor.RED));
+			DriverFile.logger.log(Status.FAIL,MarkupHelper.createLabel("error message is not verified",ExtentColor.RED));
 			
 		}
 		driver.findElement(By.name("EmailAddress")).sendKeys("ddefrwgrg");
@@ -314,15 +314,15 @@ public static void SignUpErrorTest_02(String browserName) throws InterruptedExce
 		String expInvalidEmailId="Email address is invalid";
 		
 		if(invaliId.contains(expInvalidEmailId)){
-			DriverFileTest.logger.log(Status.INFO,"error message verified");
+			DriverFile.logger.log(Status.INFO,"error message verified");
 		}
 		else{
-			DriverFileTest.logger.log(Status.FAIL,MarkupHelper.createLabel("error message is not verified",ExtentColor.RED));
+			DriverFile.logger.log(Status.FAIL,MarkupHelper.createLabel("error message is not verified",ExtentColor.RED));
 			
 		}
 		
 		Module.closeBrowser(driver);
-		DriverFileTest.logger.log(Status.PASS,MarkupHelper.createLabel("passed",ExtentColor.GREEN));
+		DriverFile.logger.log(Status.PASS,MarkupHelper.createLabel("passed",ExtentColor.GREEN));
 		
 		
 	}
@@ -335,10 +335,10 @@ public static void SignUpTest_03A(String browserName) throws InterruptedExceptio
 	String applicationTitle=driver.getTitle();
 	System.out.println(applicationTitle);
 	if(applicationTitle.contains("Xero US"))
-		DriverFileTest.logger.log(Status.INFO,"Xero page is verified");
+		DriverFile.logger.log(Status.INFO,"Xero page is verified");
 	else{
-		DriverFileTest.logger.log(Status.FAIL,MarkupHelper.createLabel("Xero page is not verified",ExtentColor.RED));
-		DriverFileTest.status=false;
+		DriverFile.logger.log(Status.FAIL,MarkupHelper.createLabel("Xero page is not verified",ExtentColor.RED));
+		DriverFile.status=false;
 		
 	}
 	//
@@ -348,10 +348,10 @@ public static void SignUpTest_03A(String browserName) throws InterruptedExceptio
 	String pageTitle=driver.findElement(By.xpath("html/body/div[6]/main/div[1]/div/div/form/div[1]/h2")).getText();
 	
 	if(expPageTitle.contains(pageTitle))
-		DriverFileTest.logger.log(Status.INFO,"SignUp page is verified");
+		DriverFile.logger.log(Status.INFO,"SignUp page is verified");
 	else{
-		DriverFileTest.logger.log(Status.FAIL,MarkupHelper.createLabel("SignUp page is not verified",ExtentColor.RED));
-		DriverFileTest.status=false;
+		DriverFile.logger.log(Status.FAIL,MarkupHelper.createLabel("SignUp page is not verified",ExtentColor.RED));
+		DriverFile.status=false;
 		
 	}
 	 js= (JavascriptExecutor) driver;
@@ -368,14 +368,14 @@ public static void SignUpTest_03A(String browserName) throws InterruptedExceptio
 	String termsPage=driver.findElement(By.xpath("html/body/main/div[2]/div/div/div[1]/h2")).getText();
 	System.out.println(termsPage);
 	if(termsPage.contains("terms of Use"))
-		DriverFileTest.logger.log(Status.INFO,"Terms Use page is verified");
+		DriverFile.logger.log(Status.INFO,"Terms Use page is verified");
 	else{
-		DriverFileTest.logger.log(Status.FAIL,MarkupHelper.createLabel("Terms Use page is not verified",ExtentColor.RED));
-		DriverFileTest.status=false;
+		DriverFile.logger.log(Status.FAIL,MarkupHelper.createLabel("Terms Use page is not verified",ExtentColor.RED));
+		DriverFile.status=false;
 		
 	}
 	Module.closeBrowser(driver);
-	DriverFileTest.logger.log(Status.PASS,MarkupHelper.createLabel("passed",ExtentColor.GREEN));
+	DriverFile.logger.log(Status.PASS,MarkupHelper.createLabel("passed",ExtentColor.GREEN));
 	
 	
 	
@@ -389,10 +389,10 @@ public static void SignUpTest_03B(String browserName) throws InterruptedExceptio
 	String applicationTitle=driver.getTitle();
 	System.out.println(applicationTitle);
 	if(applicationTitle.contains("Xero US"))
-		DriverFileTest.logger.log(Status.INFO,"Xero page is verified");
+		DriverFile.logger.log(Status.INFO,"Xero page is verified");
 	else{
-		DriverFileTest.logger.log(Status.FAIL,MarkupHelper.createLabel("Xero page is not verified",ExtentColor.RED));
-		DriverFileTest.status=false;
+		DriverFile.logger.log(Status.FAIL,MarkupHelper.createLabel("Xero page is not verified",ExtentColor.RED));
+		DriverFile.status=false;
 		
 	}
 	//
@@ -402,10 +402,10 @@ public static void SignUpTest_03B(String browserName) throws InterruptedExceptio
 	String pageTitle=driver.findElement(By.xpath("html/body/div[6]/main/div[1]/div/div/form/div[1]/h2")).getText();
 	
 	if(expPageTitle.contains(pageTitle))
-		DriverFileTest.logger.log(Status.INFO,"Signup page is verified");
+		DriverFile.logger.log(Status.INFO,"Signup page is verified");
 	else{
-		DriverFileTest.logger.log(Status.FAIL,MarkupHelper.createLabel("Signup page is not verified",ExtentColor.RED));
-		DriverFileTest.status=false;
+		DriverFile.logger.log(Status.FAIL,MarkupHelper.createLabel("Signup page is not verified",ExtentColor.RED));
+		DriverFile.status=false;
 		
 	}
 	
@@ -419,14 +419,14 @@ public static void SignUpTest_03B(String browserName) throws InterruptedExceptio
 	String privacyPage=driver.findElement(By.xpath("html/body/main/div[2]/div/div/div[1]/h2")).getText();
 	System.out.println(privacyPage);
 	if(privacyPage.contains("Privacy Policy"))
-		DriverFileTest.logger.log(Status.INFO,"Privacy Policy page is verified");
+		DriverFile.logger.log(Status.INFO,"Privacy Policy page is verified");
 	else{
-		DriverFileTest.logger.log(Status.FAIL,MarkupHelper.createLabel("Privacy page is not verified",ExtentColor.RED));
-		DriverFileTest.status=false;
+		DriverFile.logger.log(Status.FAIL,MarkupHelper.createLabel("Privacy page is not verified",ExtentColor.RED));
+		DriverFile.status=false;
 		
 	}
 	Module.closeBrowser(driver);
-	DriverFileTest.logger.log(Status.PASS,MarkupHelper.createLabel("passed",ExtentColor.GREEN));
+	DriverFile.logger.log(Status.PASS,MarkupHelper.createLabel("passed",ExtentColor.GREEN));
 	
 	
 	

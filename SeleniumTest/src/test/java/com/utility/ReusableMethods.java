@@ -13,7 +13,7 @@ import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
 import com.aventstack.extentreports.reporter.configuration.ChartLocation;
 import com.aventstack.extentreports.reporter.configuration.Theme;
 
-import com.testing.DriverFileTest;
+import com.testing.DriverFile;
 
 public class ReusableMethods {
 	public static ExtentHtmlReporter htmlReporter;
@@ -36,11 +36,11 @@ public class ReusableMethods {
 	public static void enterText(WebElement obj, String textVal, String objName){
 		if(obj.isDisplayed()){
 			obj.sendKeys(textVal);
-			DriverFileTest.logger.log(Status.INFO,"Pass: "+textVal+ " is entered in " + objName +" field.");
+			DriverFile.logger.log(Status.INFO,"Pass: "+textVal+ " is entered in " + objName +" field.");
 			//System.out.println("Pass: "+textVal+ " is entered in " + objName +" field.");
 		}else{
 			System.out.println("Fail: " + objName +" field does not exist please check your application.");
-			DriverFileTest.status=false;
+			DriverFile.status=false;
 		}
 	}
 	/*Name of the Method: clickObj

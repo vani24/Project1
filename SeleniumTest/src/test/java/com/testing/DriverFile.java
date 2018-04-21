@@ -12,7 +12,7 @@ import com.testing.AutoScripts;
 import com.utility.Module;
 import com.utility.ReusableMethods;
 
-public class DriverFileTest {
+public class DriverFile {
 public static boolean  status=true;
 	
 	public static ExtentHtmlReporter htmlReporter;
